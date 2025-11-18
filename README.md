@@ -23,6 +23,7 @@ The objective is to identify wines and sourcing countries that provide high qual
 - **Version Control:** Git & GitHub
 
 ## Project Structure
+```
 wine-rating-analysis/
 │
 ├─ notebooks/
@@ -41,6 +42,7 @@ wine-rating-analysis/
 │ └─ wine_sourcing_star_schema.pbix # Power BI report based on the star schema
 │
 └─ README.md
+```
 
 This layout highlights both the Python analysis and the BI deliverable in a clean, discoverable way.
 
