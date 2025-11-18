@@ -16,10 +16,11 @@ The objective is to identify wines and sourcing countries that provide high qual
 - Which countries provide the **best value for money** and should be prioritized for sourcing?
 
 ## Tech Stack
-- **Language:** Python (Jupyter Notebook)
+- **Language:** Python
+- **Environment:** Jupyter Notebook, VS Code
 - **Libraries:** pandas, NumPy, Matplotlib / Seaborn
 - **Data Modeling:** Dimensional modeling, star schema (fact + dimension tables)
-- **BI & Visualization:** Power BI (importing star schema, building interactive dashboard)
+- **BI & Visualization:** Power BI (importing star schema, building interactive dashboards)
 - **Version Control:** Git & GitHub
 
 ## Project Structure
