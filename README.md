@@ -1,19 +1,60 @@
-# Wine Rating Analysis
+# Wine Sourcing Analysis for a Luxury Hotel
 
-This short study compares wine ratings and prices received for various wine production countries and recommends the best and cheapest wine sourcing options.
+## Overview
+This project analyzes a large collection of global wine reviews to help a five‑star hotel design a wine list that balances **guest satisfaction** (ratings) and **cost efficiency** (price).
+Using Python for exploratory data analysis and a star‑schema model for Power BI, the project delivers data‑driven sourcing recommendations across countries and wine varieties.
 
-## Background:
+## Business Problem
+A luxury hotel wants to refresh its wine menu using data rather than intuition.
+The objective is to identify wines and sourcing countries that provide high quality (ratings) at reasonable prices, so the hotel can delight guests while keeping procurement costs under control.
 
-Hotel TULIP (a hypothetical organisation) is a five-star hotel that locates in Deakin University, Australia. It is a very special hotel with an equally special purpose: Not only does it embody all the creative energy and spirit of Deakin University, it’s a “learning environment” on which the tourism and hospitality students are trained for future hoteliers.
+#### This analysis answers:
+- How are wine **ratings and prices** distributed globally?
+- Which **varieties** receive the most attention (number of reviews)?
+- Which varieties offer **high ratings at budget‑friendly prices** (e.g., rating ≥ 90, price < 20)?
+- For each country, what is the **typical variety, average rating, and average price**?
+- Which countries provide the **best value for money** and should be prioritized for sourcing?
 
-Recently, Hotel TULIP would like to review the menu and tempt any guest with delightful wines. The hotel’s CIO, Dr Bear Guts (not Bill Gates!), believes that ratings provided by the WineEnthusiast (a multichannel marketer of a growing line of wine ) are great resources to help their Market Promotion Division to identify potential excellent wine with affordable price. Hence, Hotel TULIP would like to outsource the web usage mining task to Team- SIT742 (a hypothetical data analytics company) to analyze a wine rating dataset and discover taste and price patterns of different types of wine over the world.
+## Tech Stack
+- **Language:** Python (Jupyter Notebook)
+- **Libraries:** pandas, NumPy, Matplotlib / Seaborn
+- **Data Modeling:** Dimensional modeling, star schema (fact + dimension tables)
+- **BI & Visualization:** Power BI (importing star schema, building interactive dashboard)
+- **Version Control:** Git & GitHub
 
-## Questions and solutions:
+## Project Structure
+wine-rating-analysis/
+│
+├─ notebooks/
+│ └─ wine_rating_sourcing_analysis.ipynb # main EDA + analysis + star-schema export
+│
+├─ data/
+│ ├─ raw/
+│ │ └─ wine.json # original wine review data
+│ └─ model/
+│ ├─ FactWine.csv # fact table for Power BI
+│ ├─ DimCountry.csv # country dimension
+│ ├─ DimVariety.csv # variety dimension
+│ └─ DimWinery.csv # winery dimension
+│
+├─ powerbi/
+│ └─ wine_sourcing_star_schema.pbix # Power BI report based on the star schema
+│
+└─ README.md
 
-Following points are answered in [Program File](/Program.ipynb):
-- Exploration of data distribution
-- Ten varieties of wine which receives the highest number of reviews
-- Varieties of wine having the average price less than 20, with the average PointSat at least 90
-- Building of statistical table
-- Recommendations to Hotel TULIP to source wine from which country/countries
+This layout highlights both the Python analysis and the BI deliverable in a clean, discoverable way.
 
+## Dataset
+The dataset contains expert reviews of wines from multiple countries, with attributes such as:
+- `country` – producing country  
+- `province` / `region` – geographic region (when available)  
+- `variety` – grape/wine variety  
+- `winery` – producer  
+- `points` – expert rating score  
+- `price` – listed price (numeric)  
+- `description` – free‑text tasting notes (not fully used yet, but available for NLP extensions)
+
+The notebook includes data cleaning steps:
+- Converting `price` and `points` to numeric types.
+- Handling missing values and dropping invalid rows for price/points.
+- Basic quality checks and descriptive statistics.
