@@ -33,15 +33,8 @@ wine-rating-analysis/
 ├─ data/
 │ ├─ raw/
 │ │ └─ wine.json # original wine review data
-│ └─ model/
-│ ├─ FactWine.csv # fact table for Power BI
-│ ├─ DimCountry.csv # country dimension
-│ ├─ DimVariety.csv # variety dimension
-│ └─ DimWinery.csv # winery dimension
-│
-├─ powerbi/
-│ └─ wine_sourcing_star_schema.pbix # Power BI report based on the star schema
-│
+│ └─ notebooks/
+│ ├─ wine_rating_sourcing_analysis.ipynb # notebook
 └─ README.md
 ```
 
